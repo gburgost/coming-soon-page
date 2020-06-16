@@ -1,2 +1,2 @@
-# coming-soon-page
+# Coming Soon Page
 Challenge from Frontend Mentor
