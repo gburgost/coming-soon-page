@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="static/css/estilos.css" />
+  </head>
+  <body>
+    <div class="mobile">
+      <header class="header">
+        <img src="./static/images/logo.svg" alt="" />
+      </header>
+      <section class="imagen">
+        <!-- <img src="./static/images/hero-mobile.jpg" alt="" /> -->
+      </section>
+      <section class="coming">
+        <h1 class="coming__title">
+          We're <br />
+          <span>
+            coming soon
+          </span>
+        </h1>
+        <p class="coming__desc">
+          Hello fellow shoppers! We're currently building our new fashion store.
+          Add your email below to stay up-to-date with announcements and our
+          launch deals.
+        </p>
+        <form class="coming__form" id="form" action="">
+          <input id="email" type="text" placeholder="Email Address" />
+          <img
+            class="coming__error"
+            src="./static/images/icon-error.svg"
+            alt=""
+          />
+          <button>
+            <img src="./static/images/icon-arrow.svg" alt="" />
+          </button>
+        </form>
+        <div class="error"></div>
+      </section>
+    </div>
+    <section class="desktop">
+      <!-- <img src="./static/images/hero-desktop.jpg" alt="" /> -->
+    </section>
+    <script>
+      document
+        .getElementById("form")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+          email = document.getElementById("email").value;
+          error = document.querySelector(".error");
+          iconError = document.querySelector(".coming__error");
+          emailRegex = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
+          if (emailRegex.test(email)) {
+            console.log(email);
+            error.innerHTML = "";
+            iconError.style.display = "none";
+          } else {
+            error.innerHTML = "Pleace provide a valid email";
+            iconError.style.display = "block";
+          }
+        });
+    </script>
+  </body>
+</html>
